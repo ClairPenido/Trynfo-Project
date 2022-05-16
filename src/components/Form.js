@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 class Form extends React.Component {
   render() {
-    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
-      cardImage, cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled,
-      onInputChange, onSaveButtonClick } = this.props;
+    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, // o componente __ deve receber
+      cardImage, cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled, // as seguintes props:
+      onInputChange, onSaveButtonClick } = this.props; 
     return (
       <section>
         <form>
