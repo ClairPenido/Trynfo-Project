@@ -5,7 +5,7 @@ class Form extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled,
-      onInputChange, onSaveButtonClick } = this.prop;
+      onInputChange, onSaveButtonClick } = this.props;
     return (
       <section>
         <form>
