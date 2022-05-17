@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class Card extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
-      cardImage, cardRare, cardTrunfo } = this.props;
+      cardImage, cardRare, cardTrunfo, onInputChange } = this.props;
     return (
       <div>
         <h2 data-testid="name-card">
@@ -30,11 +30,7 @@ class Card extends React.Component {
         <p data-testid="rare-card">
           {cardRare}
         </p>
-        <p data-testid="attr3-card">
-          {cardAttr3}
-        </p>
-        {/*  https://br.vuejs.org/v2/guide/conditional.html */}
-        <h4 data-testid="trunfo-card" v-if="cardTrunfo === 'true'"> Super Trunfo </h4>
+        { cardTrunfo === true && <h4 data-testid="trunfo-card"> Super Trunfo </h4> }
       </div>
     );
   }
