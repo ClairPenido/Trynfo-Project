@@ -10,8 +10,8 @@ class Form extends React.Component {
       onInputChange, onSaveButtonClick } = this.props;
 
     return (
-      <section>
-        <form>
+      <form id="form">
+        <div className="name-description">
           <label htmlFor="name-input">
             Nome:
             <input
@@ -22,58 +22,62 @@ class Form extends React.Component {
               name="cardName"
             />
           </label>
-          <label htmlFor="description-input">
+          <label htmlFor="description-input" className="text-area">
             Descrição:
             <textarea
               value={ cardDescription }
               onChange={ onInputChange }
               type="text"
+              rows="5"
+              cols="25"
               data-testid="description-input"
               name="cardDescription"
             />
           </label>
-          <div>
-            <label htmlFor="attr1-input">
-              Atributo 1:
-              <input
-                value={ cardAttr1 }
-                onChange={ onInputChange }
-                type="number"
-                data-testid="attr1-input"
-                name="cardAttr1"
-              />
-            </label>
-            <label htmlFor="attr2-input">
-              Atributo 2:
-              <input
-                value={ cardAttr2 }
-                onChange={ onInputChange }
-                type="number"
-                data-testid="attr2-input"
-                name="cardAttr2"
-              />
-            </label>
-            <label htmlFor="attr3-input">
-              Atributo 3:
-              <input
-                value={ cardAttr3 }
-                onChange={ onInputChange }
-                type="number"
-                data-testid="attr3-input"
-                name="cardAttr3"
-              />
-            </label>
-          </div>
-          <label htmlFor="image-input">
-            Imagem:
+        </div>
+        <div className="atributos">
+          <label htmlFor="attr1-input">
+            Atributo 1:
             <input
-              value={ cardImage }
+              value={ cardAttr1 }
               onChange={ onInputChange }
-              type="text"
-              data-testid="image-input"
-              name="cardImage"
+              type="number"
+              data-testid="attr1-input"
+              name="cardAttr1"
             />
           </label>
+          <label htmlFor="attr2-input">
+            Atributo 2:
+            <input
+              value={ cardAttr2 }
+              onChange={ onInputChange }
+              type="number"
+              data-testid="attr2-input"
+              name="cardAttr2"
+            />
+          </label>
+          <label htmlFor="attr3-input">
+            Atributo 3:
+            <input
+              value={ cardAttr3 }
+              onChange={ onInputChange }
+              type="number"
+              data-testid="attr3-input"
+              name="cardAttr3"
+            />
+          </label>
+        </div>
+        <label htmlFor="image-input">
+          Imagem:
+          <input
+            value={ cardImage }
+            onChange={ onInputChange }
+            type="text"
+            data-testid="image-input"
+            name="cardImage"
+          />
+        </label>
+        <div className="raridade-superT">
           <label htmlFor="rare-input">
             Raridade
             <select
@@ -99,18 +103,18 @@ class Form extends React.Component {
               />
             </label>
           ) : <h3>Você já tem um Super Trunfo em seu baralho</h3>}
-        </form>
+        </div>
         <button
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
-          type="submit"
+          type="button"
           data-testid="save-button"
           name="button"
         >
           Salvar
 
         </button>
-      </section>
+      </form>
     );
   }
 }

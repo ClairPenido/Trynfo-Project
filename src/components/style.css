@@ -2,18 +2,27 @@
     display: flex;
 }
 
-.card-form{
-    border: 2px solid black;
-    display: flex;
-    flex-direction: column;
+.atributos{
+display: flex;
+flex-direction: column;
+text-align: center;
 }
 .preview-card{
     border: 2px solid red;
     
 }
+#form{
+    text-align: center;
+}
+.name-description{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 
 #form-app {
 width: 50%;
+display: flex;
 }
 #card-app{
 width: 50%;
