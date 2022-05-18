@@ -7,6 +7,7 @@ class Form extends React.Component {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, // o componente __ deve receber
       cardImage, cardRare, cardTrunfo, isSaveButtonDisabled, // as seguintes props:
       onInputChange, onSaveButtonClick } = this.props;
+
     return (
       <section>
         <form>
@@ -101,6 +102,7 @@ class Form extends React.Component {
           onClick={ onSaveButtonClick }
           type="submit"
           data-testid="save-button"
+          name="button"
         >
           Salvar
 
