@@ -5,7 +5,7 @@ class Form extends React.Component {
 //* exibir o super trunfo somente com o valor da prop cardTrunfo for true
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, // o componente __ deve receber
-      cardImage, cardRare, cardTrunfo, isSaveButtonDisabled, // as seguintes props:
+      cardImage, cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled, // as seguintes props:
       onInputChange, onSaveButtonClick } = this.props;
 
     return (
@@ -86,16 +86,18 @@ class Form extends React.Component {
               <option value="muito raro" name="muito raro">muito raro</option>
             </select>
           </label>
-          <label htmlFor="trunfo-input">
-            Super Trybe Trunfo
-            <input
-              checked={ cardTrunfo }
-              onChange={ onInputChange }
-              type="checkbox"
-              data-testid="trunfo-input"
-              name="cardTrunfo"
-            />
-          </label>
+          { hasTrunfo === false ? (
+            <label htmlFor="trunfo-input">
+              Super Trybe Trunfo
+              <input
+                checked={ cardTrunfo }
+                onChange={ onInputChange }
+                type="checkbox"
+                data-testid="trunfo-input"
+                name="cardTrunfo"
+              />
+            </label>
+          ) : <h3>Você já tem um Super Trunfo em seu baralho</h3>}
         </form>
         <button
           disabled={ isSaveButtonDisabled }
@@ -120,7 +122,7 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  // hasTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,

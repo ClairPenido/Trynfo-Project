@@ -14,6 +14,7 @@ class App extends React.Component {
       cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
+      hasTrunfo: false,
       isSaveButtonDisabled: true,
       cartaNova: [],
     };
@@ -24,7 +25,7 @@ class App extends React.Component {
 
   onInputChange = (event) => {
     if (event.target.type === 'checkbox') {
-      return this.setState({ [event.target.name]: event.target.checked });
+      this.setState({ [event.target.name]: event.target.checked });
     }
     this.setState({
       [event.target.name]: event.target.value }, () => this.verificarInputs());
@@ -53,23 +54,37 @@ class App extends React.Component {
   }
 
   onSaveButtonClick = () => {
-    const { cartaNova } = this.state;
+    const { cartaNova, cardTrunfo } = this.state;
     cartaNova.push(this.state);
     console.log(cartaNova);
-    this.setState({ cardName: '',
-      cardDescription: '',
-      cardAttr1: '0',
-      cardAttr2: '0',
-      cardAttr3: '0',
-      cardImage: '',
-      cardRare: 'normal',
-      cardTrunfo: false,
-      isSaveButtonDisabled: true });
+    if (cardTrunfo === 'on') {
+      this.setState({ cardName: '',
+        cardDescription: '',
+        cardAttr1: '0',
+        cardAttr2: '0',
+        cardAttr3: '0',
+        cardImage: '',
+        cardRare: 'normal',
+        cardTrunfo: false,
+        hasTrunfo: true,
+        isSaveButtonDisabled: true });
+    } else {
+      this.setState({ cardName: '',
+        cardDescription: '',
+        cardAttr1: '0',
+        cardAttr2: '0',
+        cardAttr3: '0',
+        cardImage: '',
+        cardRare: 'normal',
+        cardTrunfo: false,
+        hasTrunfo: false,
+        isSaveButtonDisabled: true });
+    }
   }
 
   render() { // criar sempre state no pai
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, // o componente __ deve receber as seguintes props:
-      cardImage, cardRare, cardTrunfo, isSaveButtonDisabled } = this.state;
+      cardImage, cardRare, cardTrunfo, isSaveButtonDisabled, hasTrunfo } = this.state;
     return (
       <div>
         <h1>Tryunfo</h1>
@@ -82,6 +97,7 @@ class App extends React.Component {
           cardImage={ cardImage }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
+          hasTrunfo={ hasTrunfo }
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onSaveButtonClick={ this.onSaveButtonClick }
