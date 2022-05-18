@@ -1,29 +1,27 @@
 .div-app{
-    display: flex;
+  display: flex;
 }
-
 .atributos{
-display: flex;
-flex-direction: column;
-text-align: center;
+  display:flex;
+  flex-direction: column;
+  text-align: center;
 }
 .preview-card{
-    border: 2px solid red;
+  border: 2px solid red;
     
 }
 #form{
-    text-align: center;
+  text-align: center;
 }
 .name-description{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
-
 #form-app {
-width: 50%;
-display: flex;
+  width: 50%;
+  display: flex;
 }
 #card-app{
-width: 50%;
+  width: 50%;
 }
