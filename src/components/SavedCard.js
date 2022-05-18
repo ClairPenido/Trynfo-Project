@@ -2,13 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 
-class Card extends React.Component {
+class SavedCard extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
-      cardImage, cardRare, cardTrunfo } = this.props;
+      cardImage, cardRare, cardTrunfo, deleteCard } = this.props; //! se eu tirar daqui ele quebra
     return (
       <section className="preview-card">
-        <h2>Preview</h2>
         <h2 data-testid="name-card">
           Nome:
           {cardName}
@@ -39,11 +38,19 @@ class Card extends React.Component {
           {cardRare}
         </p>
         { cardTrunfo === true && <h4 data-testid="trunfo-card"> Super Trunfo </h4> }
+        <button
+          data-testid="delete-button"
+          type="submit"
+          onClick={ () => deleteCard(cardName) }
+        >
+          Excluir
+
+        </button>
       </section>
     );
   }
 }
-Card.propTypes = {
+SavedCard.propTypes = {
   cardName: PropTypes.string.isRequired,
   cardDescription: PropTypes.string.isRequired,
   cardAttr1: PropTypes.string.isRequired,
@@ -52,5 +59,6 @@ Card.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
+  deleteCard: PropTypes.func.isRequired,
 };
-export default Card;
+export default SavedCard;

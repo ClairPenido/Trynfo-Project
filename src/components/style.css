@@ -1,0 +1,20 @@
+.div-app{
+    display: flex;
+}
+
+.card-form{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.preview-card{
+    border: 2px solid red;
+    
+}
+
+#form-app {
+width: 50%;
+}
+#card-app{
+width: 50%;
+}
