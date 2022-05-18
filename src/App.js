@@ -82,9 +82,11 @@ class App extends React.Component {
       console.log('filtro:', filtroCartaNova);
       this.setState({ cartaNova: filtroCartaNova });
       //* pegar dentro do find e avaliar se hasTrunfo é true
-      const cartaExcluida = cartaNova.find((e) => e.cardName === param);
-      // if (cartaExcluida. )
-      console.log(cartaExcluida);
+      // const cartaExcluida = cartaNova.find((e) => e.cardName === param);
+      // if (cartaExcluida.cardTrunfo === true) {
+
+      // }
+      // console.log(cartaExcluida);
     };
 
     render() { // criar sempre state no pai
