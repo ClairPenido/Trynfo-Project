@@ -79,14 +79,12 @@ class App extends React.Component {
     deleteCard = (param) => {
       const { cartaNova } = this.state;
       const filtroCartaNova = cartaNova.filter((e) => e.cardName !== param); // https://pt.stackoverflow.com/questions/209702/como-excluir-um-item-de-um-array-pelo-valor-do-atributo
-      console.log('filtro:', filtroCartaNova);
       this.setState({ cartaNova: filtroCartaNova });
       //* pegar dentro do find e avaliar se hasTrunfo é true
-      // const cartaExcluida = cartaNova.find((e) => e.cardName === param);
-      // if (cartaExcluida.cardTrunfo === true) {
-
-      // }
-      // console.log(cartaExcluida);
+      const cartaExcluida = cartaNova.find((e) => e.cardName === param);
+      if (cartaExcluida.cardTrunfo === true) {
+        this.setState({ hasTrunfo: false });
+      }
     };
 
     render() { // criar sempre state no pai
