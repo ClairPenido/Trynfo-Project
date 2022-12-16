@@ -10,7 +10,7 @@ class Form extends React.Component {
       onInputChange, onSaveButtonClick } = this.props;
 
     return (
-      <form id="form">
+      <form className="form">
         <div className="name-description">
           <label htmlFor="name-input">
             Nome:

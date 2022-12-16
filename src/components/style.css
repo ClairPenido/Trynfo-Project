@@ -1,0 +1,32 @@
+.div-app {
+  display: flex;
+}
+
+.atributos {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.preview-card {
+  border: 2px solid red;
+}
+
+.form {
+  text-align: center;
+}
+
+.name-description {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.form-app {
+  display: flex;
+  width: 50%;
+}
+
+.card-app {
+  width: 50%;
+}
